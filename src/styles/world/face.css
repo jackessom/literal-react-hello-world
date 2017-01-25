@@ -1,0 +1,97 @@
+.face {
+  width: 200px;
+  height: 165px;
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 60px;
+  transition: all 0.2s ease;
+  animation: happy 8s infinite;
+}
+
+.night .face {
+  animation-iteration-count: 0;
+}
+
+.mouth {
+  width: 100px;
+  height: 50px;
+  left: 50px;
+  top: 100px;
+  position: absolute;
+  background-color: black;
+  border-radius: 0 0 200px 200px;
+}
+
+.night .mouth {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  left: 90px;
+  animation: snore 5s infinite;
+}
+
+.mouth:before {
+  content: "";
+  width: 25px;
+  height: 10px;
+  left: 38px;
+  top: 30px;
+  position: absolute;
+  background-color: #730303;
+  border-radius: 0 0 200px 200px;
+}
+.night .mouth:before {
+  display: none;
+}
+
+.l-eye, .r-eye {
+  overflow: hidden;
+  top: 55px;
+  width: 25px;
+  height: 25px;
+  background-color: #000000;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.2s ease;
+  animation: blink 5s infinite;
+}
+
+.night .l-eye, .night .r-eye {
+  animation-iteration-count: 0;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 35%;
+  top: 70px;
+}
+
+.l-eye {
+  left: 45px;
+}
+
+.r-eye {
+  right: 45px;
+}
+
+.l-eye:before, .r-eye:before, .l-eye:after, .r-eye:after {
+  content: "";
+  border-radius: 50%;
+  display: block;
+  background: white;
+  position: relative;
+}
+
+.l-eye:before, .r-eye:before {
+  width: 7px;
+  height: 7px;
+  top: 5px;
+  left: 13px;
+}
+.l-eye:after, .r-eye:after {
+  width: 3px;
+  height: 3px;
+  top: 5px;
+  left: 19px;
+}

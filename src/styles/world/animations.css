@@ -1,0 +1,89 @@
+@keyframes orbitIn {
+    from { transform: rotateY(0deg) translateZ(-500px) rotateY(0deg); }
+    to   { transform: rotateY(180deg) translateZ(0px) rotateY(-180deg); }
+}
+
+@keyframes orbitOut {
+    from { transform: rotateY(180deg) translateZ(0px) rotateY(-180deg); }
+    to { transform: rotateY(350deg) translateZ(-500px) rotateY(-360deg); }
+}
+
+@-webkit-keyframes floating{
+    from {transform:translate(0, 0px);}
+    65% {transform:translate(0, 15px);}
+    to {transform: translate(0, -0px);    }
+}
+
+@keyframes rotate {
+  0% {background-position: 0 0;}
+  100% {background-position: 630px 0;}
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1, 1);
+  }
+  10% {
+    transform: scale(1, 1);
+  }
+  12% {
+    transform: scale(1, 0.1);
+  }
+  14% {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1, 1);
+  }
+  32% {
+    transform: scale(1, 0.1);
+  }
+  34% {
+    transform: scale(1, 1);
+  }
+  60% {
+    transform: scale(1, 1);
+  }
+  62% {
+    transform: scale(1, 0.1);
+  }
+  64% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes happy {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  10% {
+    transform: translate(10px, 10px);
+  }
+  20% {
+    transform: translate(10px, 5px);
+  }
+  30% {
+    transform: translate(0px, 0px);
+  }
+  60% {
+    transform: translate(-20px, -10px);
+  }
+  70% {
+    transform: translate(-10px, -15px);
+  }
+  80% {
+    transform: translate(-10px, -15px);
+  }
+  90% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes snore {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(2, 2);
+  }
+}

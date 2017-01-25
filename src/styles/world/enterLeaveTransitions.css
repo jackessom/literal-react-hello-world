@@ -1,0 +1,77 @@
+/* World */
+.world-enter, .world-leave {
+  perspective: 500px;
+}
+
+.world-enter .animationWrapper  {
+  transform: rotateY(0deg) translateZ(-500px) rotateY(0deg);
+  opacity: 0.01;
+}
+
+.world-enter.world-enter-active .animationWrapper  {
+  animation: orbitIn 0.5s 1;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.world-leave .animationWrapper  {
+  transform: rotateY(0deg) translateZ(0px) rotateY(0deg);
+  opacity: 1;
+}
+
+.world-leave.world-leave-active .animationWrapper {
+  animation: orbitOut 0.5s 1;
+  transition: opacity 0.5s ease;
+  opacity: 0.01;
+}
+
+/* Buttons */
+
+.world-enter button {
+  opacity: 0.01;
+}
+
+.world-enter.world-enter-active button {
+  opacity: 1;
+}
+
+.world-leave button {
+  opacity: 0.01;
+}
+
+.world-leave.world-leave-active button {
+}
+
+/* left button */
+
+.world-enter button:first-child {
+  transform: translateX(-100px);
+}
+
+.world-enter.world-enter-active button:first-child {
+  transform: translateX(0px);
+}
+
+.world-leave button:first-child {
+  transform: translateX(-100px);
+}
+
+.world-leave.world-leave-active button:first-child {
+}
+
+/* right button */
+
+.world-enter button:last-child {
+  transform: translateX(100px);
+}
+
+.world-enter.world-enter-active button:last-child {
+  transform: translateX(0px);
+}
+
+.world-leave button:last-child {
+  transform: translateX(100px);
+}
+
+.world-leave.world-leave-active button:last-child {
+}
