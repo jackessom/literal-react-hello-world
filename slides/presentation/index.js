@@ -3,23 +3,17 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
-  Appear,
   BlockQuote,
   Cite,
-  CodePane,
   Deck,
-  Fill,
   Heading,
-  Image,
-  Layout,
-  Link,
   ListItem,
   List,
-  Markdown,
   Quote,
   Slide,
-  Spectacle,
-  Text
+  Text,
+  CodePane,
+  Image
 } from "spectacle";
 
 // Import image preloader util
@@ -28,145 +22,170 @@ import preloader from "spectacle/lib/utils/preloader";
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
-// Import custom component
-import Interactive from "../assets/interactive";
-
 // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  thinkingReact: require("../assets/thinkingReact.png"),
+  logo: require("../assets/react.svg"),
+  atlassian: require("../assets/logos/atlassian.png"),
+  bbc: require("../assets/logos/bbc.png"),
+  cloudfare: require("../assets/logos/cloudfare.png"),
+  codeacademy: require("../assets/logos/codeacademy.png"),
+  docker: require("../assets/logos/docker.png"),
+  dropbox: require("../assets/logos/dropbox.png"),
+  ebay: require("../assets/logos/ebay.png"),
+  expedia: require("../assets/logos/expedia.png"),
+  facebook: require("../assets/logos/facebook.png"),
+  imdb: require("../assets/logos/imdb.png"),
+  imgur: require("../assets/logos/imgur.png"),
+  instagram: require("../assets/logos/instagram.png"),
+  netflix: require("../assets/logos/netflix.png"),
+  newyorktimes: require("../assets/logos/newyorktimes.png"),
+  paypal: require("../assets/logos/paypal.png"),
+  pintrest: require("../assets/logos/pintrest.png"),
+  reddit: require("../assets/logos/reddit.png"),
+  trainline: require("../assets/logos/trainline.png"),
+  twitter: require("../assets/logos/twitter.png"),
+  uber: require("../assets/logos/uber.png"),
+  visa: require("../assets/logos/visa.png"),
+  whatsapp: require("../assets/logos/whatsapp.png"),
+  yahoo: require("../assets/logos/yahoo.png")
 };
 
 preloader(images);
 
 const theme = createTheme({
-  primary: "#ff4081"
+  primary: "white",
+  secondary: "#222222",
+  tertiary: "#00D8FF"
+}, {
+  primary: "Montserrat",
+  secondary: "Helvetica"
 });
 
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Spectacle theme={theme}>
-        <Deck transition={["zoom", "slide"]} transitionDuration={500}>
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1} textColor="black">
-              Spectacle
-            </Heading>
-            <Heading size={1} fit caps>
-              A ReactJS Presentation Library
-            </Heading>
-            <Heading size={1} fit caps textColor="black">
-              Where You Can Write Your Decks In JSX
-            </Heading>
-            <Link href="https://github.com/FormidableLabs/spectacle">
-              <Text bold caps textColor="tertiary">View on Github</Text>
-            </Link>
-            <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-            <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
-            <Heading size={2} caps fit textColor="primary" textFont="primary">
-              Wait what?
-            </Heading>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <CodePane
-              lang="jsx"
-              source={require("raw!../assets/deck.example")}
-              margin="20px auto"
-            />
-          </Slide>
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-            <Appear fid="1">
-              <Heading size={1} caps fit textColor="primary">
-                Full Width
-              </Heading>
-            </Appear>
-            <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
-                Adjustable Darkness
-              </Heading>
-            </Appear>
-            <Appear fid="3">
-              <Heading size={1} caps fit textColor="primary">
-                Background Imagery
-              </Heading>
-            </Appear>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Flexible Layouts</Heading>
-            <Layout>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
-                </Heading>
-              </Fill>
-            </Layout>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
-          </Slide>
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
-            </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-            </Markdown>
-          </Slide>
-          <Slide transition={["slide", "spin"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
-          </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-            <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
-            </List>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
-          </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-              Made with love in Seattle by
-            </Heading>
-            <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
-          </Slide>
-        </Deck>
-      </Spectacle>
+      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
+        <Slide transition={["slide"]} bgColor="secondary" textColor="primary" notes="
+            <p>Built by facebook</p>
+          ">
+          <Heading size={2} textColor="primary">
+            React
+          </Heading>
+          <Image height="200px" src={images.logo}/>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="secondary" textColor="primary" notes="
+          <p>precurser: react apps. just talking about react.</p>
+          <p>slide supposed to be intimidating</p>
+          <p>2016: javascript fatigue</p>
+          <p>2017: javascript renaissance</p>
+          ">
+          <Heading size={6} textColor="primary">Ecosystem</Heading>
+          <Text margin="1em 0 0" size={1} textColor="primary">
+            NodeJS, Express, NPM, Webpack, Webpack Dev Server, Loaders, CommonJS, Flux, Redux, ES6, ES7, Classes, Arrow functions, Spread indicators, Babel, ESlint, Jasmine, Chai, Mocha, Karma
+          </Text>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="secondary" notes="
+          <p>tagline from website.</p>
+          ">
+          <BlockQuote>
+            <Quote>"A javascript library for building  user interfaces"</Quote>
+          </BlockQuote>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="secondary" notes="
+          <p>sometimes for internal apps and just for mobile (twitter)</p>
+          ">
+          <Heading size={6} textColor="primary">Who's using it...</Heading>
+          <Image width="150px" margin="10px"  src={images.atlassian} />
+          <Image width="150px" margin="10px"  src={images.bbc} />
+          <Image width="150px" margin="10px"  src={images.cloudfare} />
+          <Image width="150px" margin="10px"  src={images.codeacademy} />
+          <Image width="150px" margin="10px"  src={images.docker} />
+          <Image width="150px" margin="10px"  src={images.dropbox} />
+          <Image width="150px" margin="10px"  src={images.ebay} />
+          <Image width="150px" margin="10px"  src={images.expedia} />
+          <Image width="150px" margin="10px"  src={images.facebook} />
+          <Image width="150px" margin="10px"  src={images.imdb} />
+          <Image width="150px" margin="10px"  src={images.imgur} />
+          <Image width="150px" margin="10px"  src={images.instagram} />
+          <Image width="150px" margin="10px"  src={images.netflix} />
+          <Image width="150px" margin="10px"  src={images.newyorktimes} />
+          <Image width="150px" margin="10px"  src={images.paypal} />
+          <Image width="50px" margin="10px"  src={images.pintrest} />
+          <Image width="150px" margin="10px"  src={images.reddit} />
+          <Image width="150px" margin="10px"  src={images.trainline} />
+          <Image width="150px" margin="10px"  src={images.twitter} />
+          <Image width="150px" margin="10px"  src={images.uber} />
+          <Image width="150px" margin="10px"  src={images.visa} />
+          <Image width="150px" margin="10px"  src={images.whatsapp} />
+          <Image width="150px" margin="10px"  src={images.yahoo} />
+        </Slide>
+        <Slide transition={["slide"]} bgColor="secondary" textColor="primary" notes="
+          <p>Components: scaleable, modular, reuseable. get more onto the pros in a minute.</p>
+          <p>doesn't care about your stack. With react native can build to mobile devices. Electron allows to be built into software.</p>
+          <p>allows for animations like bertrand mentioned with googles material design.</p>
+          <p>server side rendering</p>
+          ">
+          <Heading size={6} textColor="primary">Why{"?"}</Heading>
+          <List>
+            <ListItem>Component based</ListItem>
+            <ListItem>Learn once, write everywhere</ListItem>
+            <ListItem>One page applications</ListItem>
+            <ListItem>Great for SEO</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="secondary" notes="
+          <p>example from the react docs</p>
+          <p>components as small as possible</p>
+          ">
+          <Heading size={6} textColor="primary" >Thinking in React</Heading>
+          <Image margin="20px 0 0"  src={images.thinkingReact} fit/>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="secondary" textColor="primary" notes="
+          <h2>Show demo</h2>
+          <p>Container component</p>
+          <ul>
+            <li>Class</li>
+            <li>Methods</li>
+            <li>Render function</li>
+            <li>JSX</li>
+          </ul>
+          <p>STATE</p>
+          <p>When state is changed, render is triggered. Enter the virtual DOM</p>
+          <p>PROPERTIES</p>
+          <p>all logic in one place</p>
+          <p>not in the example but you can also import css to this file</p>
+          ">
+          <Heading size={6} textColor="primary" >Components</Heading>
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/container.example")}
+            margin="20px auto"
+          />
+        </Slide>
+        <Slide transition={["slide"]} bgColor="secondary" textColor="primary" notes="
+          <p>Presentational</p>
+          <p>Simple, stateless function</p>
+          ">
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/presentational.example")}
+            margin="20px auto"
+          />
+        </Slide>
+        <Slide transition={["slide"]} bgColor="secondary" textColor="primary">
+          <Heading size={2} textColor="primary">
+            THE END
+          </Heading>
+          <Text margin="1em 0 0" size={1} textSize="0.75em" textColor="primary">
+            Oh.....these slides were made with React by the way.
+          </Text>
+        </Slide>
+      </Deck>
     );
   }
 }
