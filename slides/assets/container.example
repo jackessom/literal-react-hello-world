@@ -11,6 +11,7 @@ class ComponentName extends Component {
       <div>
         <h1>Hello, world!</h1>
         <p>{props.description}</p>
+        <Presentational text="Text for the presentational component" />
         <button onClick={this.handleClick}>Click me</button>
       </div>
     );
