@@ -12,9 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), 'build'),
     filename: 'bundle.js',
-    // commenting out for now as this me to just open whatever
-    // is in the build folder and it works
-    // publicPath: '/'
+    publicPath: '/'
   },
   module: {
     preLoaders: [
@@ -45,7 +43,7 @@ module.exports = {
         test: /\.(svg|jpg)$/,
         loader: 'file',
         query: {
-          name: 'static/media/[name].[hash:8].[ext]'
+          name: 'assets/images/[name].[hash:8].[ext]'
         }
       }
     ]
@@ -87,7 +85,7 @@ module.exports = {
       }
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin('css/[name].[contenthash:8].css'),
+    new ExtractTextPlugin('assets/css/[name].[contenthash:8].css'),
   ],
   eslint: {
     failOnWarning: true,
