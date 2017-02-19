@@ -1,7 +1,7 @@
 {
-  "name": "react-boilerplate",
-  "version": "0.0.1",
-  "description": "Custom built boilerplate to quickly get started on React projects",
+  "name": "literal-react-hello-world",
+  "version": "1.0.0",
+  "description": "Extended Hello World React app to help explain components, state and props.",
   "main": "index.js",
   "scripts": {
     "start": "node scripts/start.js",
