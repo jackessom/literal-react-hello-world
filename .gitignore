@@ -1,6 +1,7 @@
 
 # Don't check auto-generated stuff into git
 node_modules
+build
 
 # Cruft
 .DS_Store
