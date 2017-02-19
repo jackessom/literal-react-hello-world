@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), 'build'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/literal-react-hello-world/'
   },
   module: {
     preLoaders: [
